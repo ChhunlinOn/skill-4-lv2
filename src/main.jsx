@@ -1,14 +1,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
-import Farmers from "./pages/Farmer";
+import Farmers from "./pages/Croptypepage";
 import "./index.css";
 import App from "./App";
-import Farmland from "./pages/Farmland";
-import CropCycle from "./pages/CropCycle";
-import Accuonts from "./pages/Accounts";
-
+import CropPages from "./pages/Croppage";
 
 const router = createBrowserRouter([
   {
@@ -17,29 +13,15 @@ const router = createBrowserRouter([
     errorElement: <h1>Oop! Error!</h1>,
     children: [
       {
-        path: "/dashboard",
-        element: <Dashboard />
+        path: "/croppages",
+        element: <CropPages />,
       },
       {
-        path: "/farmers",
-        element: <Farmers />
+        path: "/croptypes",
+        element: <Farmers />,
       },
-      {
-        path: "/farmlands",
-        element: <Farmland />
-      },
-      {
-        path:"/crop-cycles",
-        element:<CropCycle/>
-      },
-      {
-        path:"/accounts",
-        element:<Accuonts/>
-
-      }
-    ]
+    ],
   },
-
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
